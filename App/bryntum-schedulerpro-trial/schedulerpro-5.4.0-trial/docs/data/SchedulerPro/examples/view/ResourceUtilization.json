@@ -1,0 +1,353 @@
+{
+  "success" : true,
+  "project" : {
+    "calendar" : "weekends"
+  },
+  "calendars" : {
+    "rows" : [
+      {
+        "id"        : "weekends",
+        "name"      : "Weekends",
+        "intervals" : [
+          {
+            "recurrentStartDate" : "on Sat at 0:00",
+            "recurrentEndDate"   : "on Mon at 0:00",
+            "isWorking"          : false
+          }
+        ]
+      },
+      {
+        "id"                       : "workhours",
+        "name"                     : "Working hours",
+        "unspecifiedTimeIsWorking" : false,
+        "intervals"                : [
+          {
+            "recurrentStartDate" : "at 8:00 except on Saturday and Sunday",
+            "recurrentEndDate"   : "at 17:00 except on Saturday and Sunday",
+            "isWorking"          : true
+          }
+        ]
+      },
+      {
+        "id"                       : "custom",
+        "name"                     : "Custom",
+        "unspecifiedTimeIsWorking" : false,
+        "intervals"                : [
+          {
+            "recurrentStartDate" : "on Mon at 0:00",
+            "recurrentEndDate"   : "on Wed at 0:00",
+            "isWorking"          : true
+          },
+          {
+            "recurrentStartDate" : "on Wed at 04:00",
+            "recurrentEndDate"   : "on Wed at 20:00",
+            "isWorking"          : true
+          },
+          {
+            "recurrentStartDate" : "on Thu at 06:00",
+            "recurrentEndDate"   : "on Thu at 18:00",
+            "isWorking"          : true
+          }
+        ]
+      }
+    ]
+  },
+  "resources" : {
+    "rows" : [
+      {
+        "id"   : "r1",
+        "name" : "Celia",
+        "city" : "Barcelona"
+      },
+      {
+        "id"   : "r2",
+        "name" : "Lee",
+        "city" : "London"
+      },
+      {
+        "id"       : "r3",
+        "name"     : "Macy",
+        "city"     : "New York",
+        "calendar" : "custom"
+      },
+      {
+        "id"   : "r4",
+        "name" : "Madison",
+        "city" : "Barcelona"
+      }
+    ]
+  },
+  "events" : {
+    "rows" : [
+      {
+        "id"        : 1,
+        "startDate" : "2020-04-27",
+        "duration"  : 4,
+        "name"      : "Conference",
+        "iconCls"   : "b-fa b-fa-calendar"
+      },
+      {
+        "id"         : 2,
+        "startDate"  : "2020-04-28",
+        "endDate"    : "2020-04-30",
+        "name"       : "Prototype",
+        "iconCls"    : "b-fa b-fa-pen",
+        "eventColor" : "indigo"
+      },
+      {
+        "id"         : 3,
+        "duration"   : 1,
+        "name"       : "Test",
+        "iconCls"    : "b-fa b-fa-search",
+        "eventColor" : "cyan"
+      },
+      {
+        "id"         : 4,
+        "duration"   : 2,
+        "name"       : "Manufacture",
+        "iconCls"    : "b-fa b-fa-hammer",
+        "eventColor" : "blue"
+      },
+      {
+        "id"         : 5,
+        "startDate"  : "2020-04-29",
+        "duration"   : 3,
+        "name"       : "Brainstorm",
+        "iconCls"    : "b-fa b-fa-lightbulb",
+        "eventColor" : "violet"
+      },
+      {
+        "id"         : 6,
+        "startDate"  : "2020-04-27",
+        "duration"   : 7,
+        "name"       : "Maintenance",
+        "iconCls"    : "b-fa b-fa-tools",
+        "eventColor" : "blue"
+      },
+      {
+        "id"         : 7,
+        "startDate"  : "2020-04-27",
+        "duration"   : 1,
+        "name"       : "Design",
+        "iconCls"    : "b-fa b-fa-marker",
+        "eventColor" : "indigo"
+      },
+      {
+        "id"         : 8,
+        "duration"   : 3,
+        "name"       : "Build",
+        "iconCls"    : "b-fa b-fa-hammer",
+        "eventColor" : "blue"
+      },
+      {
+        "id"         : 9,
+        "duration"   : 2,
+        "name"       : "Sell",
+        "iconCls"    : "b-fa b-fa-coins",
+        "eventColor" : "orange"
+      },
+      {
+        "id"         : 10,
+        "startDate"  : "2020-05-01",
+        "duration"   : 1,
+        "name"       : "Survey",
+        "iconCls"    : "b-fa b-fa-users",
+        "eventColor" : "green"
+      },
+      {
+        "id"        : 11,
+        "startDate" : "2020-05-05",
+        "duration"  : 4,
+        "name"      : "Conference",
+        "iconCls"   : "b-fa b-fa-calendar"
+      },
+      {
+        "id"         : 12,
+        "startDate"  : "2020-05-04",
+        "duration"   : 2,
+        "name"       : "Brainstorm",
+        "iconCls"    : "b-fa b-fa-lightbulb",
+        "eventColor" : "violet"
+      },
+      {
+        "id"         : 13,
+        "startDate"  : "2020-05-05",
+        "duration"   : 1,
+        "name"       : "Design",
+        "iconCls"    : "b-fa b-fa-marker",
+        "eventColor" : "indigo"
+      },
+      {
+        "id"         : 14,
+        "duration"   : 3,
+        "name"       : "Build",
+        "iconCls"    : "b-fa b-fa-hammer",
+        "eventColor" : "blue"
+      },
+      {
+        "id"         : 15,
+        "startDate"  : "2020-05-06",
+        "duration"   : 3,
+        "name"       : "Prototype",
+        "iconCls"    : "b-fa b-fa-pen",
+        "eventColor" : "indigo"
+      }
+    ]
+  },
+  "assignments" : {
+    "rows" : [
+      {
+        "id"       : 1,
+        "resource" : "r1",
+        "event"    : 1
+      },
+      {
+        "id"       : 2,
+        "resource" : "r2",
+        "event"    : 1
+      },
+      {
+        "id"       : 3,
+        "resource" : "r8",
+        "event"    : 1
+      },
+      {
+        "id"       : 4,
+        "resource" : "r2",
+        "event"    : 2
+      },
+      {
+        "id"       : 5,
+        "resource" : "r4",
+        "event"    : 3
+      },
+      {
+        "id"       : 6,
+        "resource" : "r5",
+        "event"    : 4
+      },
+      {
+        "id"       : 7,
+        "resource" : "r6",
+        "event"    : 5
+      },
+      {
+        "id"       : 8,
+        "resource" : "r7",
+        "event"    : 5
+      },
+      {
+        "id"       : 9,
+        "resource" : "r9",
+        "event"    : 5
+      },
+      {
+        "id"       : 10,
+        "resource" : "r10",
+        "event"    : 6
+      },
+      {
+        "id"       : 11,
+        "resource" : "r3",
+        "event"    : 7
+      },
+      {
+        "id"       : 12,
+        "resource" : "r3",
+        "event"    : 8
+      },
+      {
+        "id"       : 13,
+        "resource" : "r3",
+        "event"    : 9
+      },
+      {
+        "id"       : 14,
+        "resource" : "r7",
+        "event"    : 10
+      },
+      {
+        "id"       : 15,
+        "resource" : "r4",
+        "event"    : 11
+      },
+      {
+        "id"       : 16,
+        "resource" : "r6",
+        "event"    : 11
+      },
+      {
+        "id"       : 17,
+        "resource" : "r9",
+        "event"    : 11
+      },
+      {
+        "id"       : 18,
+        "resource" : "r1",
+        "event"    : 12
+      },
+      {
+        "id"       : 19,
+        "resource" : "r7",
+        "event"    : 12
+      },
+      {
+        "id"       : 20,
+        "resource" : "r8",
+        "event"    : 12
+      },
+      {
+        "id"       : 21,
+        "resource" : "r7",
+        "event"    : 13
+      },
+      {
+        "id"       : 22,
+        "resource" : "r8",
+        "event"    : 14
+      },
+      {
+        "id"       : 23,
+        "resource" : "r2",
+        "event"    : 15
+      }
+    ]
+  },
+  "dependencies" : {
+    "rows" : [
+      {
+        "id"        : 1,
+        "fromEvent" : 2,
+        "toEvent"   : 3,
+        "fromSide"  : "bottom"
+      },
+      {
+        "id"        : 2,
+        "fromEvent" : 3,
+        "toEvent"   : 4,
+        "fromSide"  : "bottom"
+      },
+      {
+        "id"        : 3,
+        "fromEvent" : 7,
+        "toEvent"   : 8,
+        "lag"       : 4,
+        "lagUnit"   : "h"
+      },
+      {
+        "id"        : 4,
+        "fromEvent" : 8,
+        "toEvent"   : 9,
+        "lag"       : 4,
+        "lagUnit"   : "h"
+      },
+      {
+        "id"        : 5,
+        "fromEvent" : 13,
+        "toEvent"   : 14,
+        "lag"       : 8,
+        "lagUnit"   : "h"
+      }
+    ]
+  }
+}

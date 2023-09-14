@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bryntum-schedulerpro-trial/schedulerpro-5.4.0-trial/build/schedulerpro.material.css" data-bryntum-theme>
+    <link rel="stylesheet" href="./Style/main.css">
+
+    <title>Plantafel</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="msg" hidden>
+        <!--
+          <button id="getBtn">Nachricht erhalten</button>
+        -->
+        <button id="postBtn" hidden>Nachricht senden</button>
+        <input type="text" id="ausmsg" hidden>
+    </form>
+    <div id="container">
+        <div id="plantafel-container">
+            <div id="main">
+
+            </div>
+        </div>
+    </div>
+
+
+    <script type="module">
+        import { messageResources, getGenResources } from './Script/index.js';
+        import { writeJson } from './Script/writeJson.js';
+        import dataGenEvents from './Resource/dataGenEvent.json' assert { type: "json"};
+        import puffer from './Resource/puffer.json' assert { type: "json"};
+        const serverAdress = "ws://localhost:5000";
+        var socket = new WebSocket(serverAdress);
+        const postBtn = document.getElementById('postBtn');
+        //const getBtn = document.getElementById('getBtn');
+        const input = document.getElementById('msg');
+        const ausg = document.getElementById('ausmsg');
+
+        let start = 0, end = 0;
+
+        let jsonhelper = 0;
+
+        // Listen for open event
+        socket.onopen = function (e) {
+            console.log("Mit server Verbunden");
+        };
+
+        // Listen for messages
+        socket.onmessage = function (event) {
+
+            //console.log(dataGenEvents);
+            if (jsonhelper === 0) {
+                console.log("Daten Erhalten:", event.data);
+                ausg.value = event.data;
+
+            }
+            if (jsonhelper == 1 && event.data !== "save") {
+                //Funktionsaufruf von der Plantafel
+                let obj = JSON.parse(event.data);
+                //console.log(event.data);
+                //messageResources(obj);
+                /*
+                fetch('./Resource/puffer.json', {
+                    method: 'post',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(obj)
+                })*/
+
+                writeJson(obj);
+                //console.log(puffer);
+                //getGenResources(puffer);
+                jsonhelper = 0;
+            }
+            if (event.data === "fertig") {
+                //let obj = JSON.parse(dataGenEvents);
+                //console.log(obj);
+                end = Date.now()
+                //console.log(start);
+                console.log("Laufzeit: " + ((end - start) / 1000) + "s");
+                //console.log(dataGenEvents);
+
+            }
+            event.data == "save" ? jsonhelper = 1 : jsonhelper = 0;
+            //outputMessage(event.data);
+        };
+
+        // Listen for close event
+        socket.onclose = function (event) {
+            if (event.wasClean) {
+                console.log("Connection closed cleanly");
+            } else {
+                console.log("Connection aborted");
+            }
+        };
+
+        // Listen for errors
+        socket.onerror = function (error) {
+            console.log("Error:", error.message);
+        };
+
+        postBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            let msg = input.value;
+            start = Date.now();
+            msg == "get" ? jsonhelper = 1 : jsonhelper = 0;
+            //console.log(start);
+            //start = Date.now();
+            //console.log(jsonhelper);
+            socket.send(msg);
+        });
+
+        function outputMessage(msg) {
+            input.value = msg;
+        };
+
+        /*
+        socket.on('inputMessage', msg =>{
+          outputMessage(msg);
+        })
+
+        postBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const msg = input.value;
+          socket.emit('chatMessage', msg);
+        });
+        getBtn.addEventListener('click', (e) => {
+
+        });
+
+        function outputMessage(msg) {
+          input.value = 'Empfangen: ' + msg;
+        };*/
+
+
+    </script>
+
+    <script type="module" src="./Script/index.js"></script>
+
+</body>
+</html>

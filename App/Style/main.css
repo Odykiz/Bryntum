@@ -1,0 +1,54 @@
+﻿body,
+html {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: Poppins, "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    background-color: lightgray;
+}
+
+#head-container {
+    flex-direction: column;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#container {
+    position: relative;
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    transform: translate(0, 0);
+    overflow: hidden;
+}
+
+#plantafel-container {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    flex: 0%;
+}
+
+.b-gridbase.b-autoheight {
+    height: 100%;
+    flex: 0%;
+}
+
+.test {
+    color: #000;
+    font-weight: bolder;
+}
+
+.ungrid {
+    background-color: #0000ff;
+    color: #fff;
+    font-weight: bolder;
+}
+
+

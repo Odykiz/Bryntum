@@ -1,0 +1,20 @@
+{
+  "resources" : {
+    "rows" : [
+      { "id" : 1, "name" : "Alice", "role" : "Developer" },
+      { "id" : 2, "name" : "Bob", "role" : "PM" },
+      { "id" : 3, "name" : "Charlie", "role" : "Analyst" },
+      { "id" : 4, "name" : "David", "role" : "UI/UX Designer" },
+      { "id" : 5, "name" : "Eve", "role" : "QA Engineer" }
+    ]
+  },
+  "events" : {
+    "rows" : [
+      { "id" : 1, "resourceId" : 1, "startDate" : "2023-04-17", "duration" : 7, "name" : "Project Kickoff" },
+      { "id" : 2, "resourceId" : 2, "startDate" : "2023-04-22", "duration" : 10, "name" : "Requirements Gathering", "eventColor" : "deep-orange" },
+      { "id" : 3, "resourceId" : 3, "startDate" : "2023-05-02", "duration" : 7, "name" : "Data Analysis" },
+      { "id" : 4, "resourceId" : 4, "startDate" : "2023-05-13", "duration" : 8, "name" : "UI/UX Design Review" },
+      { "id" : 5, "resourceId" : 5, "startDate" : "2023-05-14", "duration" : 6, "name" : "QA Testing" }
+    ]
+  }
+}
